@@ -1,0 +1,67 @@
+@keyframes fall {
+    70% {
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(6px);
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    /*url('https://png.pngtree.com/thumb_back/fh260/background/20201023/pngtree-abstract-pink-neon-light-gaming-background-design-image_430854.jpg')*/
+    background: url('boo_open.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.box-text {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin: 50px auto 0;
+    display: none;
+    text-align: center;
+}
+
+.box-text div {
+    margin: 15px 0;
+}
+
+.item-animate span {
+    font-size: 45px;
+    margin: 10px 0 0;
+    font-weight: 600;
+    color: red;
+    line-height: 60px;
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(30px);
+    animation: fall .5s forwards;
+    animation-delay: calc(var(--i) * 0.35s);
+}
+
+.music {
+    position: relative;
+    z-index: 10;
+    margin-left: 30px;
+}
+
+
+@media screen and (max-width: 540px) {
+    .item-animate span {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}
