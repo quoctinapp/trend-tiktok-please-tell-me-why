@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".item-4").innerHTML = text4;
 
   document.querySelector('.music').addEventListener('play', function() {
+    document.querySelectorAll('.box-text-1, .box-text-2').forEach(element => {
+      element.style.display = 'none';
+    });
     setTimeout(() => {
       document.querySelector('.box-text-1').style.display = 'block';
       handleAnimation(1);
@@ -43,14 +46,5 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector('.box-text-2').style.display = 'block';
       handleAnimation(2);
     }, 12500);
-  });
-
-  document.querySelector('.music').addEventListener('ended', function() {
-    // Set a timeout to remove text after 10 minutes (600,000 milliseconds)
-    setTimeout(() => {
-      document.querySelectorAll('.box-text-1, .box-text-2').forEach(element => {
-        element.style.display = 'none';
-      });
-    }, 600000);
   });
 });
